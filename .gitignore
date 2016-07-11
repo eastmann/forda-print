@@ -1,0 +1,7 @@
+# Gulp build #
+##############
+gulpfile.js
+package.json
+*.todo
+
+node_modules/
