@@ -1,0 +1,445 @@
+/* RESOURCES:
+   ==========================================================================
+   General Styles
+   ========================================================================== */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 100%;
+
+    background-color: #000;
+    background-image: url("../images/bg/gradient.jpg");
+    background-position: left top;
+    background-repeat: repeat-x;
+}
+
+body > .content-wrapper {
+    padding-right: 15px;
+    padding-left: 15px;
+
+    text-align: left;
+}
+
+h2 {
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+a {
+    color: @colorLink;
+    text-transform: uppercase;
+}
+
+a:hover {
+    color: @colorLinkHover;
+    text-decoration: none;
+}
+
+figure {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+figure img {
+    max-width: 100%;
+}
+
+p {
+    color: #fff;
+    font-size: 13px;
+}
+
+b {
+    font-weight: normal;
+}
+
+.container {
+    position: relative;
+
+    max-width: 960px;
+}
+
+.accent-text {
+    color: @colorLink;
+}
+
+/* GENERAL COMPONENTS:
+   ==========================================================================
+   Content Wrapper
+   ========================================================================== */
+.content-wrapper {
+    margin-bottom: 40px;
+}
+
+.content-wrapper .par.parsys {
+    position: relative;
+}
+
+.content-wrapper .par.parsys > .section:nth-child(2) {
+    position: relative;
+    z-index: 1049;
+
+    width: 600px;
+}
+
+.content-wrapper .par.parsys > .section:nth-child(3) {
+    position: absolute;
+    top: -85px;
+    right: -200px;
+    z-index: 1;
+
+    max-width: 600px;
+}
+
+.content-wrapper .image img,
+.content-wrapper .text img {
+    max-width: 100%;
+}
+
+.content-wrapper .text p {
+    word-break: break-word;
+}
+
+.content-wrapper a {
+    text-transform: none;
+}
+
+
+
+/* GENERAL COMPONENTS:
+   ==========================================================================
+   Landing Wrapper
+   ========================================================================== */
+.landing-wrapper {
+    margin-bottom: 40px;
+
+    // DEBUG:
+    // background-color: #fc0;
+}
+
+.landing-wrapper .par.parsys {
+    position: relative;
+}
+
+.landing-wrapper > .container > .par.parsys > .section {
+    width: 40%;
+}
+
+.landing-wrapper > .container > .par.parsys > .section img {
+    max-width: 100%;
+}
+
+.landing-wrapper > .container > .par.parsys > .image.section {
+    position: absolute;
+    top: -20px;
+    right: -70px;
+    z-index: 1;
+
+    max-width: 640px;
+    width: auto;
+}
+
+.landing-wrapper > .container > .par.parsys > .section + .text p {
+    margin-top: 30px;
+
+    font-size: 11px;
+}
+
+.landing-wrapper > .container > .par.parsys > .confirmation {
+    width: 100%;
+}
+
+.landing-wrapper #conf-box {
+    .SetUserMessage();
+    .SetBorderGradient();
+
+    position: absolute;
+    top: -10px;
+    z-index: 999;
+}
+
+.landing-wrapper #conf-box h3 {
+    margin-bottom: 15px;
+
+    color: @colorLink;
+    font-family: @CondProMedium;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.landing-wrapper a {
+    text-transform: none;
+}
+
+
+
+/* GENERAL COMPONENTS:
+   ==========================================================================
+   Overlay Wrapper
+   ========================================================================== */
+.overlay-wrapper {
+    text-align: center;
+}
+
+.overlay-wrapper .image {
+    margin-top: 20px;
+}
+
+.overlay-wrapper .image + .image {
+    margin-top: 80px;
+}
+
+.overlay-wrapper .image img {
+    max-width: 100%;
+}
+
+.overlay-wrapper .footer {
+    margin-top: 80px;
+}
+
+.overlay-wrapper .footer img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.overlay-wrapper a {
+    text-transform: none;
+}
+
+
+
+/* GENERAL COMPONENTS:
+   ==========================================================================
+   Navigation Item
+   ========================================================================== */
+.navigation-item {
+    display: inline-block;
+
+    font-size: 17px;
+}
+
+.navigation-item + .navigation-item {
+    margin-left: 20px;
+}
+
+.navigation-item + .navigation-item:before {
+    content: "|";
+    display: inline-block;
+    margin-right: 24px;
+
+    color: #c48e26;
+    font-size: 20px;
+    line-height: 16px;
+}
+
+
+// -----
+
+
+.content-wrapper > .container > .par.parsys > .text.parbase.section + .text.parbase.section {
+    .SetBorderGradient();
+
+    padding: 10px 30px;
+
+    border: 2px solid #cc7827;
+    border-radius: 10px;
+}
+
+
+// -----
+
+
+.main-button {
+    display: inline-block;
+    margin-top: 30px;
+
+    border: none;
+    cursor: pointer;
+    outline: none;
+
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.main-button--prize,
+.main-button--code {
+    width: 352px;
+}
+
+.main-button--prize {
+    margin-top: 25px;
+    height: 77px;
+
+    background-image: url("../images/content/button-order.png");
+}
+
+.main-button--code {
+    margin-top: 20px;
+    height: 79px;
+
+    background-image: url("../images/content/button-register.png");
+}
+
+// .main-button > img {
+//     max-width: 100%;
+// }
+
+
+// -----
+
+
+.button-add {
+    height: 40px;
+
+    cursor: pointer;
+    text-align: left;
+
+    // DEBUG:
+    // background-color: #f44;
+}
+
+.button-add__text {
+    vertical-align:  middle;
+
+    color: @colorBorder;
+    font-family: @defaultFontStack;
+    font-size: 48px;
+    font-weight: normal;
+    line-height: 40px;
+}
+
+.button-add__text:hover {
+    color: @colorWhite;
+}
+
+
+// -----
+
+
+.social-links {
+
+}
+
+.social-links__link,
+.social-links > .vklogin,
+.social-links > .fblogin {
+    display: inline-block;
+
+    cursor: pointer;
+}
+
+.social-links__link + .social-links__link,
+.social-links > .fblogin {
+    margin-left: 20px;
+}
+
+.social-links img {
+    .SetSocialLinks();
+}
+
+
+// -----
+
+
+.server-message > p {
+    margin: 0;
+
+    color: inherit;
+    font-size: inherit;
+}
+
+.server-message--error > p {
+    .SetServerError();
+}
+
+.server-message--success > p {
+    .SetServerSuccess();
+}
+
+/* SUB-SECTION:
+   --------------------------------------------
+   Styles: Responsive
+   -------------------------------------------- */
+@media all and (max-width: 991px) {
+    .main-button--prize,
+    .main-button--code {
+        width: 288px;
+    }
+
+    .main-button--code {
+        margin-top: 0;
+    }
+
+    .landing-wrapper > .container > .par.parsys > .section + .text p {
+        margin-top: 0;
+
+        font-size: 9px;
+    }
+
+    .landing-wrapper > .container > .par.parsys > .image.section {
+        right: -50px;
+
+        max-width: 460px;
+    }
+
+    .content-wrapper .par.parsys > .section:nth-child(2) {
+        width: 100%;
+    }
+
+    .content-wrapper .par.parsys > .section:nth-child(3) {
+        display: none;
+    }
+}
+
+@media all and (max-width: 767px) {
+    body {
+        text-align: center;
+    }
+
+    .landing-wrapper > .container > .par.parsys > .section {
+        width: 100%;
+    }
+
+    .main-button--prize,
+    .main-button--code {
+        width: 352px;
+    }
+
+    .main-button--code {
+        margin-top: 20px;
+    }
+
+    .landing-wrapper > .container > .par.parsys > .section + .text p {
+        margin-top: 20px;
+
+        font-size: 11px;
+    }
+
+    .landing-wrapper > .container > .par.parsys > .image.section {
+        display: none;
+    }
+
+    .content-wrapper {
+        margin-bottom: 0;
+    }
+
+    .content-wrapper .par.parsys > .section:nth-child(2) {
+        float: none;
+        width: 100%;
+    }
+
+    .button-add {
+        margin: 20px auto 0 auto;
+
+        width: 40px;
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .main-button--prize,
+    .main-button--code {
+        width: 100%;
+    }
+}

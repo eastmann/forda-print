@@ -1,0 +1,200 @@
+/* MIXINS:
+   ==========================================================================
+   Border
+   ========================================================================== */
+.SetBorderGradient() {
+    &:after,
+    &:before {
+        position: absolute;
+        left: 2%;
+
+        content: "\00a0";
+        display: block;
+
+        width: 96%;
+        height: 2px;
+
+        background: linear-gradient(to right,  #cc7827 0%,#eac16a 38%,#fffffc 61%,#f4dfa3 76%,#cd7928 100%);
+    }
+
+    &:after {
+        bottom: -2px;
+    }
+
+    &:before {
+        top: -2px;
+    }
+}
+
+.SetBorder(@radius: 10px) {
+    border: 2px solid @colorBorder;
+    border-radius: @radius;
+}
+
+.SetThinBorder(@radius: 5px) {
+    border: 1px solid @colorBorder;
+    border-radius: @radius;
+}
+
+
+
+/* MIXINS:
+   ==========================================================================
+   Forms
+   ========================================================================== */
+.SetFormInput() {
+    .SetBorder(5px);
+
+    padding-right: 10px;
+    padding-left: 10px;
+
+    width: 100%;
+    height: 40px;
+
+    color: #fff;
+    font-size: 14px;
+
+    background: transparent;
+
+    outline: none;
+
+    transition: border-color 0.3s ease-in-out;
+
+    &:focus {
+        border-color: @colorWhite;
+    }
+}
+
+.SetFormInputError() {
+    display: block;
+    margin-top: 2px;
+
+    color: @colorError;
+}
+
+.SetFormButton() {
+    color: @formButtonText;
+    font-family: @CondProMedium;
+    font-size: 18px;
+
+    background: @formButtonBg;
+    border: none;
+    border-radius: 4px;
+
+    box-shadow:  1px  1px 2px hsla(0,0%,0%,0.33),
+          inset  1px  1px 1px hsla(53,100%,62%,0.9),
+          inset -1px -1px 1px hsla(16,88%,35%,0.9);
+
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+        background: @formButtonBgHover;
+    }
+}
+
+
+
+/* MIXINS:
+   ==========================================================================
+   Modal
+   ========================================================================== */
+.SetCloseIcon() {
+    color: @colorLink;
+    font-family: @Times;
+    font-size: 28px;
+    font-weight: normal;
+    text-shadow: none;
+    opacity: 0.8;
+    outline: none;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+
+
+/* MIXINS:
+   ==========================================================================
+   Server Messages
+   ========================================================================== */
+.SetServerMessage() {
+    margin: 20px 0;
+    padding: 5px 10px;
+
+    color: @colorWhite;
+    font-family: @CondProMedium;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: left;
+    text-transform: uppercase;
+
+    &:empty {
+        display: none;
+    }
+}
+
+.SetServerSuccess() {
+   .SetServerMessage();
+
+    background-color: @bgSuccess;
+}
+
+.SetServerError() {
+   .SetServerMessage();
+
+    background-color: @bgError;
+}
+
+
+
+/* MIXINS:
+   ==========================================================================
+   User Messages
+   ========================================================================== */
+.SetUserMessage(@radius: 5px) {
+    .SetBorder(@radius);
+    position: relative;
+
+    padding: 0 15px 15px 15px;
+
+    width: 100%;
+
+    background-color: hsla(0,0%,0%,0.85);
+    box-shadow: 0 0 7px hsla(360,0%,0%,0.7);
+
+    & .close {
+        font-size: 0;
+        opacity: 0.8;
+    }
+
+    & .close:hover {
+        opacity: 1;
+    }
+
+    & .close:after {
+        .SetCloseIcon();
+
+        position: absolute;
+        top: 0;
+        right: 5px;
+
+
+        content: "\00d7";
+    }
+}
+    /* MIXINS:
+   ==========================================================================
+   Social Links
+   ========================================================================== */
+.SetSocialLinks() {
+    opacity: 0.8;
+
+    transition: all 0.5s ease;
+
+    &:hover {
+        opacity: 1.0;
+
+        box-shadow: 0px 0px 25px hsla(0,0%,100%,0.8);
+    }
+}
