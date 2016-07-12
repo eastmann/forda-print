@@ -9,9 +9,9 @@
 
     {% block title %} {% endblock title %}
 
+    <link rel="stylesheet" href="css/reset.css" />
     {# <link rel="stylesheet" href="css/bootstrap.css" /> #}
-    {% block styles %} {% endblock styles %}
-    {# <link rel="stylesheet" href="css/import.css"> #}
+    <link rel="stylesheet" href="css/import.css">
 
     {# <script src="js/libs/jquery.js"></script> #}
     {# <script src="js/libs/bootstrap.js"></script> #}

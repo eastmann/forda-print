@@ -27,7 +27,7 @@ var PATH = {
     };
     PATH.less = {
         all : PATH.source + 'css/import.less',
-        in  : PATH.source + 'css/*.less',
+        in  : PATH.source + 'css/**/*.less',
         out : PATH.dest   + 'css/'
     };
     PATH.css = {
@@ -59,14 +59,14 @@ var SYNC_CONFIG = {
         // index : 'blog.html'
         // index : 'news.html'
         // index : 'about.html'
-        // index : 'index.html'
+        index : 'index.html'
         // index : 'sales.html'
         // index : 'search.html'
         // index : 'catalog.html'
         // index : 'product.html'
         // index : 'contacts.html'
         // index : 'news-open.html'
-        index : 'catalog-filter.html'
+        // index : 'catalog-filter.html'
     },
     open   : false,
     notify : true

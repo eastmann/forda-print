@@ -18,7 +18,8 @@
  * forms................... Forms style across the site
  *
  * COMPONENTS:
- * header.................. Page header styles
+ * catalog-menu............ Main page menu categories
+
  * footer.................. Page footer styles
  * faq..................... FAQ page styles
  * contact-us.............. Contact Us page styles
@@ -30,3 +31,149 @@
  * modal................... Modal popup styles
  *
  **/
+/* FONTS:
+   ==========================================================================
+   Font styles
+   ========================================================================== */
+@font-face {
+  font-family: 'GOST';
+  src: url('../fonts/GOST_B_0.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* RESOURCES:
+   ==========================================================================
+   General Styles
+   ========================================================================== */
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'GOST', Arial, sans-serif;
+  font-size: 100%;
+}
+/* COMPONENT:
+   ==========================================================================
+   Catalog Menu
+   ========================================================================== */
+.catalog-menu {
+  position: relative;
+}
+.catalog-menu:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "+";
+  display: block;
+  margin-top: -23px;
+  margin-left: -9px;
+  color: #eee;
+  font-size: 38px;
+}
+.catalog-menu__list:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.catalog-menu__item {
+  position: relative;
+  float: left;
+  width: 50%;
+  text-align: center;
+  text-transform: uppercase;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: auto;
+}
+.catalog-menu__item:nth-child(odd) {
+  border-right: 1px solid #c7c7c7;
+}
+.catalog-menu__item:nth-child(even) {
+  border-left: 1px solid #c7c7c7;
+}
+.catalog-menu__item:nth-child(-n+2) {
+  border-bottom: 1px solid #c7c7c7;
+}
+.catalog-menu__item:nth-last-child(-n+2) {
+  border-top: 1px solid #c7c7c7;
+}
+.catalog-menu__item--inc {
+  background-color: #22a9e2;
+  background-image: url('../../images/content/inc.jpg');
+}
+.catalog-menu__item--equipment {
+  /*background-color: hsl(329,76%,51%);*/
+  background-color: #df2086;
+  background-image: url('../../images/content/equipment.jpg');
+}
+.catalog-menu__item--materials {
+  /*background-color: hsl(57,79%,53%);*/
+  background-color: #e6d928;
+  background-image: url('../../images/content/materials.jpg');
+}
+.catalog-menu__item--service {
+  background-color: #7a7a7a;
+  background-image: url('../../images/content/service.jpg');
+}
+.catalog-menu__title {
+  display: block;
+  opacity: 0;
+  color: #fff;
+  font-size: 32px;
+  line-height: 340px;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.65);
+  -moz-transition: all 0.45s ease-in-out 0s;
+  transition: all 0.45s ease-in-out 0s;
+}
+.catalog-menu__title:hover {
+  opacity: 1;
+}
+/* SUB-SECTION:
+   --------------------------------------------
+   Catalog Menu: responsive
+   -------------------------------------------- */
+@media screen and (max-width: 900px) {
+  .catalog-menu__item {
+    background-size: 70%;
+  }
+  .catalog-menu__title {
+    line-height: 200px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .catalog-menu__title {
+    font-size: 24px;
+    line-height: 140px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .catalog-menu__item {
+    width: 100%;
+    background-image: none;
+  }
+  .catalog-menu:after {
+    display: none;
+  }
+  .catalog-menu__item:nth-child(odd) {
+    border-right: none;
+  }
+  .catalog-menu__item:nth-child(even) {
+    border-left: none;
+  }
+  .catalog-menu__item:nth-child(-n+2) {
+    border-bottom: none;
+  }
+  .catalog-menu__item:nth-last-child(-n+2) {
+    border-top: none;
+  }
+  .catalog-menu__title {
+    opacity: 1;
+    line-height: 70px;
+    background-color: transparent;
+  }
+  .catalog-menu__title:hover {
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+}
